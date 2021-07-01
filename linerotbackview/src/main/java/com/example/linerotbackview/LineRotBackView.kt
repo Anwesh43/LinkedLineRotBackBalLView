@@ -200,4 +200,13 @@ class LineRotBackView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineRotBackView {
+            val view : LineRotBackView = LineRotBackView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
  }
