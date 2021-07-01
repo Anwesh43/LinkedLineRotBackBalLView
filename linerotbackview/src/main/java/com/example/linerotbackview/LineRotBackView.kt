@@ -17,8 +17,8 @@ val colors : Array<Int> = arrayOf(
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
-val parts : Int = 4
-val scGap : Float = 0.02f
+val parts : Int = 3
+val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 3.4f
 val delay : Long = 20
@@ -36,10 +36,10 @@ fun Canvas.drawLineRotBack(scale : Float, w : Float, h : Float, paint : Paint) {
     val sc3 : Float = scale.divideScale(2, parts)
     val r : Float = size / 5
     save()
-    translate(w / 2, 0f)
+    translate(0f, h / 2)
     rotate(rot * sc3)
     drawLine(0f, 0f, size * sc1, 0f, paint)
-    drawCircle(0f, -h / 2 - r + (h / 2 + r) * sc2, r, paint)
+    drawCircle(size + r, -h / 2 - r + (h / 2 + r) * sc2, r, paint)
     restore()
 }
 
