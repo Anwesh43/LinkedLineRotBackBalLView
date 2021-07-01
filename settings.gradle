@@ -1,0 +1,3 @@
+include ':linerotbackview'
+include ':app'
+rootProject.name = "LinkedLineRotBackBalLView"
